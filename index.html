@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>RAKIB VIP MODE</title>
+
+<style>
+  :root {
+    --pro-red: #ff003c;
+    --pro-cyan: #00f7ff;
+    --pro-gold: #ffcc00;
+    --pro-purple: #9d00ff;
+    --bg-dark: #050505;
+  }
+
+  * {
+    box-sizing: border-box;
+    touch-action: none;
+    margin: 0; padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    height: 100vh; overflow: hidden;
+    background: #000;
+    font-family: 'Arial Black', sans-serif;
+  }
+
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; z-index: 1; }
+
+  #core {
+    position: fixed; right: 20px; bottom: 120px; width: 230px;
+    z-index: 99999; user-select: none; cursor: move;
+    will-change: transform;
+  }
+
+  /* TIMER STYLE - WINGO 30s */
+  #timerPill {
+    position: absolute; top: -25px; left: 50%; transform: translateX(-50%);
+    background: #000; color: #fff;
+    border: 2px solid var(--pro-cyan); padding: 5px 22px;
+    border-radius: 30px; font-weight: 900; font-size: 20px;
+    box-shadow: 0 0 20px var(--pro-cyan), inset 0 0 10px var(--pro-cyan);
+    z-index: 101;
+    text-shadow: 0 0 5px #fff;
+    min-width: 100px; text-align: center;
+  }
+
+  #panel { display: none; }
+
+  .stage {
+    position: relative; height: 220px; width: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .orbit-container {
+    position: absolute; width: 200px; height: 200px;
+    animation: rotateRGB 3s linear infinite;
+    will-change: transform;
+  }
+  @keyframes rotateRGB {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .fireball {
+    position: absolute; width: 25px; height: 25px; border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+    border: 2px solid #fff;
+  }
+
+  .fireball::after {
+    content: ''; position: absolute; top: 50%; left: 50%;
+    width: 65px; height: 18px; background: linear-gradient(to left, currentColor, transparent);
+    transform: translateY(-50%) rotate(180deg); transform-origin: left center;
+    border-radius: 50%; opacity: 0.8;
+  }
+
+  .triContainer {
+    position: relative; width: 155px; height: 140px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .triSVG {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    filter: drop-shadow(0 0 15px rgba(0,247,255,0.5));
+  }
+
+  .content {
+    position: relative; z-index: 10; text-align: center;
+    padding-top: 10px;
+    background: rgba(0,0,0,0.85);
+    border-radius: 20px;
+    width: 125px; height: 125px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    border: 2px solid var(--pro-cyan);
+    box-shadow: inset 0 0 20px rgba(0,247,255,0.2), 0 0 15px rgba(0,0,0,1);
+  }
+
+  .brand-tag {
+    font-size: 9px; color: var(--pro-gold); font-weight: 900;
+    margin-bottom: 4px; text-shadow: 0 0 5px var(--pro-gold);
+    text-transform: uppercase;
+  }
+
+  .pred-label {
+    font-size: 11px; font-weight: 900; color: #fff;
+    letter-spacing: 2px; opacity: 0.9;
+  }
+
+  .bs {
+    font-size: 40px; font-weight: 1000; line-height: 1;
+    margin: 8px 0; display: block;
+    filter: drop-shadow(0 0 10px currentColor);
+  }
+  .big { color: #00ff00; text-shadow: 0 0 25px #00ff00; }
+  .small { color: #ff0000; text-shadow: 0 0 25px #ff0000; }
+
+  #login {
+    padding: 25px; border-radius: 20px;
+    background: #000; border: 2px solid var(--pro-cyan);
+    box-shadow: 0 0 30px var(--pro-cyan); text-align: center;
+  }
+  .inp {
+    width: 100%; height: 45px; background: #111;
+    border: 2px solid var(--pro-purple); border-radius: 10px;
+    color: #fff; text-align: center; margin-bottom: 15px; font-weight: bold;
+    outline: none; box-shadow: inset 0 0 10px var(--pro-purple);
+  }
+  .btn {
+    width: 100%; height: 45px; border: none; border-radius: 10px;
+    background: linear-gradient(45deg, var(--pro-cyan), var(--pro-purple));
+    color: #fff; font-weight: 900; cursor: pointer;
+    box-shadow: 0 0 15px var(--pro-purple);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- UPDATED LINK HERE -->
+<iframe src="https://www.hgnice.vip/#/register?invitationCode=656661788244"></iframe>
+
+<div id="core">
+  
+  <!-- 30s Timer Display -->
+  <div id="timerPill">--</div>
+
+  <!-- Login Panel -->
+  <div id="login">
+    <div style="color:var(--pro-cyan); font-size:14px; margin-bottom:12px; font-weight:900;">
+      RAKIB VIP MODE 
+    </div>
+    
+    <input id="key" class="inp" type="password" placeholder="ENTER PRO KEY">
+    
+    <button id="unlockBtn" class="btn">
+      START FOR VIP MODE
+    </button>
+  </div>
+
+  <!-- Main Hack Panel -->
+  <div id="panel">
+    <div class="stage">
+      <div class="orbit-container">
+        <div class="fireball" style="top: -12px; left: 50%; transform: translateX(-50%); color: var(--pro-red);"></div>
+        <div class="fireball" style="bottom: -12px; left: 50%; transform: translateX(-50%) rotate(180deg); color: var(--pro-cyan);"></div>
+        <div class="fireball" style="left: -12px; top: 50%; transform: translateY(-50%) rotate(-90deg); color: #00ff00;"></div>
+        <div class="fireball" style="right: -12px; top: 50%; transform: translateY(-50%) rotate(90deg); color: #ff00ff;"></div>
+      </div>
+
+      <div class="triContainer" id="triMain">
+        <svg class="triSVG" viewBox="0 0 100 100">
+          <polygon points="50,5 95,95 5,95" fill="rgba(0,0,0,0.9)" stroke="url(#proGrad)" stroke-width="4"></polygon>
+          <defs>
+            <linearGradient id="proGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:var(--pro-cyan)"></stop>
+              <stop offset="50%" style="stop-color:var(--pro-purple)"></stop>
+              <stop offset="100%" style="stop-color:var(--pro-red)"></stop>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div class="content">
+          <div class="brand-tag">RAKIB VIP MODE</div>
+          <div class="pred-label">HACKING</div>
+          <div class="bs small" id="bs">CHECKING</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const core = document.getElementById('core');
+  const keyInput = document.getElementById('key');
+  const unlockBtn = document.getElementById('unlockBtn');
+  const loginDiv = document.getElementById('login');
+  const panelDiv = document.getElementById('panel');
+  const timerPill = document.getElementById('timerPill');
+  const bsText = document.getElementById('bs');
+
+  // DRAG FUNCTIONALITY
+  let isDragging = false;
+  let startX, startY, initialLeft, initialTop;
+
+  core.addEventListener('touchstart', (e) => {
+    if(e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') return;
+    
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    const rect = core.getBoundingClientRect();
+    initialLeft = rect.left;
+    initialTop = rect.top;
+  });
+
+  core.addEventListener('touchmove', (e) => {
+    if(!isDragging) return;
+    e.preventDefault();
+    const currentX = e.touches[0].clientX;
+    const currentY = e.touches[0].clientY;
+    const dx = currentX - startX;
+    const dy = currentY - startY;
+
+    core.style.position = 'fixed';
+    core.style.left = `${initialLeft + dx}px`;
+    core.style.top = `${initialTop + dy}px`;
+    core.style.bottom = 'auto';
+    core.style.right = 'auto';
+  });
+
+  core.addEventListener('touchend', () => { isDragging = false; });
+
+  // LOGIN LOGIC (Password: *****)
+  unlockBtn.addEventListener('click', () => {
+    if(keyInput.value === 'rakib vip mode') {
+      loginDiv.style.display = 'none';
+      panelDiv.style.display = 'block';
+      start30sTimer();
+    } else {
+      alert('WRONG PASSWORD!');
+    }
+  });
+
+  // WINGO 30S TIMER LOGIC
+  function start30sTimer() {
+    setInterval(() => {
+      const d = new Date();
+      const seconds = d.getSeconds();
+      
+      // Calculate remaining time for 30s cycle
+      const cycleSeconds = seconds % 30;
+      const remaining = 30 - cycleSeconds;
+
+      // Update Timer Display
+      timerPill.textContent = remaining < 10 ? `0${remaining}` : remaining;
+
+      // Logic: Wait in last 5 seconds, else show result
+      if (remaining <= 5) {
+        timerPill.style.color = "#ff003c";
+        timerPill.style.borderColor = "#ff003c";
+        
+        // Show WAIT
+        bsText.textContent = "CHECKING";
+        bsText.className = "bs";
+        bsText.style.color = "white";
+        bsText.style.textShadow = "0 0 10px white";
+      } else {
+        timerPill.style.color = "#fff";
+        timerPill.style.borderColor = "#00f7ff";
+        
+        // Generate Result (Stable for the 25s window)
+        const blockId = Math.floor(d.getTime() / 30000); 
+        const seed = blockId * 12345;
+        const randomVal = Math.sin(seed) * 10000;
+        const finalBig = (randomVal - Math.floor(randomVal)) > 0.5;
+
+        if(finalBig) {
+          bsText.textContent = "BIG";
+          bsText.className = "bs big";
+        } else {
+          bsText.textContent = "SMALL";
+          bsText.className = "bs small";
+        }
+      }
+
+    }, 1000); // Update every second
+  }
+</script>
+
+</body>
+</html>
