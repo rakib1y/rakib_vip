@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAKIB</title>
+    <title>Join Us - চ্যানেল ও গ্রুপ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
         * {
             margin: 0;
@@ -14,228 +15,180 @@
         }
 
         body {
-            background: radial-gradient(circle at center, #0a001f 0%, #000000 100%);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            overflow: hidden;
-            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: white;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-        }
-
-        /* Background Particles */
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .particle {
-            position: absolute;
-            background: #00f5ff;
-            border-radius: 50%;
-            box-shadow: 0 0 12px #00f5ff;
-            animation: floatParticle linear infinite;
-        }
-
-        @keyframes floatParticle {
-            0% { transform: translateY(100vh) scale(0.4); opacity: 0.7; }
-            100% { transform: translateY(-100px) scale(1.1); opacity: 0; }
+            padding: 20px;
         }
 
         .container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Logo */
-        .logo-container {
-            margin-bottom: 50px;
-            animation: logoFloat 7s ease-in-out infinite;
+        .header {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
         }
 
         .logo {
-            width: 210px;
-            height: 210px;
+            width: 120px;
+            height: 120px;
+            background: white;
             border-radius: 50%;
-            border: 6px solid #00f5ff;
-            box-shadow: 
-                0 0 40px #00f5ff,
-                0 0 80px #c026d3,
-                inset 0 0 35px rgba(0, 245, 255, 0.6);
-            transition: all 0.4s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.07) rotate(5deg);
-            box-shadow: 
-                0 0 60px #00f5ff,
-                0 0 110px #ff00ff;
-        }
-
-        /* Main Title */
-        .title {
-            font-size: 4.8rem;
-            font-weight: 900;
-            letter-spacing: 10px;
-            margin-bottom: 60px;
-            background: linear-gradient(90deg, #00f5ff, #c026d3, #ff00ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 
-                0 0 30px #00f5ff,
-                0 0 60px #c026d3;
-            animation: neonFlicker 2s infinite alternate;
-        }
-
-        @keyframes neonFlicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 24%, 55% { opacity: 0.85; }
-        }
-
-        /* Join Button */
-        .join-btn {
-            display: inline-flex;
+            margin: 0 auto 15px;
+            display: flex;
             align-items: center;
-            gap: 12px;
-            background: linear-gradient(45deg, #229ED9, #1E88E5);
-            color: white;
-            padding: 16px 42px;
-            font-size: 1.35rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
-            box-shadow: 
-                0 0 30px rgba(34, 158, 217, 0.9),
-                0 0 50px rgba(34, 158, 217, 0.6);
-            transition: all 0.4s ease;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             overflow: hidden;
+            padding: 8px;
         }
 
-        .join-btn:hover {
-            transform: translateY(-6px);
-            box-shadow: 
-                0 0 45px rgba(34, 158, 217, 1),
-                0 0 70px rgba(34, 158, 217, 0.9);
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
         }
 
-        .join-btn::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -100%;
-            width: 50%;
-            height: 200%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
-            animation: shine 3s infinite;
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
-        @keyframes shine {
-            0% { transform: translateX(-100%); }
-            20% { transform: translateX(300%); }
-            100% { transform: translateX(300%); }
-        }
-
-        .telegram-icon {
-            font-size: 1.8rem;
-        }
-
-        /* Footer */
-        .footer {
-            margin-top: 70px;
-            font-size: 1.05rem;
-            color: #94a3b8;
+        .header p {
+            font-size: 15px;
             opacity: 0.9;
+            line-height: 1.4;
         }
 
-        @media (max-width: 768px) {
-            .title {
-                font-size: 3.2rem;
-                letter-spacing: 6px;
-            }
-            .logo {
-                width: 170px;
-                height: 170px;
-            }
-            .join-btn {
-                padding: 14px 35px;
-                font-size: 1.2rem;
-            }
+        .content {
+            padding: 40px 30px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 24px;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .youtube-btn {
+            background: #ff0000;
+            color: white;
+        }
+
+        .youtube-btn:hover {
+            background: #e60000;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 0, 0, 0.4);
+        }
+
+        .telegram-btn {
+            background: linear-gradient(135deg, #229ED9, #1a8ac4);
+            color: white;
+        }
+
+        .telegram-btn:hover {
+            background: linear-gradient(135deg, #1a8ac4, #1678a8);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(34, 158, 217, 0.4);
+        }
+
+        .icon {
+            font-size: 28px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
-    <!-- Background Particles -->
-    <div class="particles" id="particles"></div>
 
     <div class="container">
-        <!-- Logo -->
-        <div class="logo-container">
-            <a href="https://t.me/xmlbyrakib" target="_blank">
-                <img src="https://i.ibb.co.com/9H5hSBk5/IMG-20260429-221800.png" 
-                     alt="RAKIB 9X Logo" 
-                     class="logo">
-            </a>
+        <!-- Header with Logo -->
+        <div class="header">
+            <div class="logo" id="logoContainer">
+                <!-- ✅ ঠিক করা লোগো -->
+                <img src="https://i.ibb.co/99PxKt3w/1778737849165.png" 
+                     alt="XT Rakib Logo">
+            </div>
+            <h1>✯Ӽ𝐓 𝕽𝐀𝐊𝐈𝐁✯</h1>
+            <p>সকল🆇🅼🅻নিচের চ্যানেল গুলোতে পাবেন।এই লিংকটি𝐂𝐑𝐎𝐌𝐄ব্রাউজারে ওপেন করুন।</p>
         </div>
 
-        <!-- Title -->
-        <h1 class="title">RAKIB</h1>
+        <!-- Content -->
+        <div class="content">
+            <!-- YouTube Button -->
+            <a href="https://youtube.com/@xtrakib-9?si=v7WE2XxrDNbr1VLy" 
+               target="_blank" 
+               class="btn youtube-btn" 
+               id="youtubeLink">
+                <i class="fab fa-youtube icon"></i>
+                <span>᪥𝐒𝐔𝐁𝐒𝐂𝐑𝐈𝐁𝐄 𝐍𝐎𝐖</span>
+            </a>
 
-        <!-- Join Button -->
-        <a href="https://t.me/xmlbyrakib" target="_blank" class="join-btn">
-            <span class="telegram-icon">📬</span>
-            JOIN TELEGRAM FOR XML📂
-        </a>
+            <!-- Telegram Button -->
+            <a href="https://t.me/xtrakib9" 
+               target="_blank" 
+               class="btn telegram-btn" 
+               id="telegramLink">
+                <i class="fab fa-telegram-plane icon"></i>
+                <span>᪥𝐉𝐎𝐈𝐍𝐄 𝐍𝐎𝐖 𝐓𝐆</span>
+            </a>
+
+            <div class="social-icons">
+                <i class="fab fa-youtube" style="font-size: 28px; color: #ff0000;"></i>
+                <i class="fab fa-telegram" style="font-size: 28px; color: #229ED9;"></i>
+            </div>
+        </div>
 
         <div class="footer">
-            জয়েন বাটনে ক্লিক করে চ্যানেলে জয়েন করুন
+            © 2026 |✯𝐗𝐓 𝐑𝐀𝐊𝐈𝐁✯|
         </div>
     </div>
 
     <script>
-        // Create floating particles
-        function createParticles() {
-            const container = document.getElementById('particles');
-            for (let i = 0; i < 70; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                const size = Math.random() * 5 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.bottom = `-20px`;
-                
-                const duration = Math.random() * 20 + 12;
-                particle.style.animationDuration = `${duration}s`;
-                particle.style.animationDelay = `-${Math.random() * 15}s`;
-                
-                const opacity = Math.random() * 0.6 + 0.4;
-                particle.style.opacity = opacity;
-                
-                container.appendChild(particle);
-                
-                setTimeout(() => {
-                    if (particle.parentNode) particle.remove();
-                }, duration * 1000 + 2000);
-            }
+        // লোগো পরিবর্তন করার জন্য ফাংশন (পরে প্রয়োজন হলে ব্যবহার করতে পারবেন)
+        function updateLogo(imageUrl) {
+            document.querySelector('#logoContainer img').src = imageUrl;
         }
-
-        window.onload = () => {
-            createParticles();
-            setInterval(createParticles, 7000);
-        };
     </script>
+
 </body>
 </html>
